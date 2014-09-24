@@ -3,8 +3,8 @@
 section#main
   ul#todo-list
     = each
-      li
-        input.toggle type='checkbox'
+      li class={isCompleted:completed}
+        = input class='toggle' type='checkbox' checked=isCompleted
         label= title
         button.destroy
   input#toggle-all type='checkbox'
