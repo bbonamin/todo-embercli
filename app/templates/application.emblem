@@ -1,9 +1,8 @@
-h2 id='title' Welcome to Ember.js handsome
-
-outlet
-
-ul
-  li My world
-  li With Emblem
-  li is Awesome
+section id='todoapp'
+  header#header
+    h1 todos
   
+  = outlet
+
+footer#info
+  p Double-click to edit a todo

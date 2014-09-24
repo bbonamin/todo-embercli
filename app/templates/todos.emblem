@@ -1,0 +1,29 @@
+input#new-todo type='text' placeholder='What needs to be done?'
+
+section#main
+  ul#todo-list
+    li.completed
+      input.toggle type='checkbox'
+      label Learn Ember
+      button.destroy
+    li
+      input.toggle type='checkbox'
+      label ...
+      button.destroy
+    li
+      input.toggle type='checkbox'
+      label Profit!
+      button.destroy
+  input#toggle-all type='checkbox'
+
+footer#footer
+  span#todo-count
+    strong 
+      ` 2
+    | todos left
+  ul#filters
+    li: a.selected href='all' All
+    li: a.active href='active' Active
+    li: a.completed href='completed' Completed
+  button#clear-completed Clear completed (1)
+    
