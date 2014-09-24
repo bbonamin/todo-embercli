@@ -1,0 +1,9 @@
+h2 id='title' Welcome to Ember.js handsome
+
+outlet
+
+ul
+  li My world
+  li With Emblem
+  li is Awesome
+  
