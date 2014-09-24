@@ -2,18 +2,11 @@ input#new-todo type='text' placeholder='What needs to be done?'
 
 section#main
   ul#todo-list
-    li.completed
-      input.toggle type='checkbox'
-      label Learn Ember
-      button.destroy
-    li
-      input.toggle type='checkbox'
-      label ...
-      button.destroy
-    li
-      input.toggle type='checkbox'
-      label Profit!
-      button.destroy
+    = each
+      li
+        input.toggle type='checkbox'
+        label= title
+        button.destroy
   input#toggle-all type='checkbox'
 
 footer#footer
