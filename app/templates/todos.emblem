@@ -1,4 +1,4 @@
-input#new-todo type='text' placeholder='What needs to be done?'
+=input id='new-todo' type='text' placeholder='What needs to be done?' valueBinding='newTitle' action='createTodo'
 
 section#main
   ul#todo-list
