@@ -1,15 +1,7 @@
 =input id='new-todo' type='text' placeholder='What needs to be done?' valueBinding='newTitle' action='createTodo'
 
 section#main
-  ul#todo-list
-    each itemController='todo'
-      li class={isCompleted:completed isEditing:editing}
-        if isEditing
-          = input class='edit' type='text' value=title focus-out='acceptChanges' insert-newline='acceptChanges'
-        else
-          = input class='toggle' type='checkbox' checked=isCompleted
-          label{action 'editTodo' on='doubleClick'}= title
-          button.destroy{action 'removeTodo'}
+  = outlet
   input#toggle-all type='checkbox'
 
 footer#footer
@@ -18,8 +10,8 @@ footer#footer
       ` 2
     | todos left
   ul#filters
-    li: a.selected href='all' All
-    li: a.active href='active' Active
-    li: a.completed href='completed' Completed
+    li= link-to 'todos.index' activeClass='selected' | All
+    li= link-to 'todos.active' activeClass='selected' | Active
+    li= link-to 'todos.complete' activeClass='selected' | Complete
   button#clear-completed Clear completed (1)
     
