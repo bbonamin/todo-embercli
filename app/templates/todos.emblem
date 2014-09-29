@@ -2,11 +2,14 @@
 
 section#main
   ul#todo-list
-    = each
-      li class={isCompleted:completed}
-        = input class='toggle' type='checkbox' checked=isCompleted
-        label= title
-        button.destroy
+    each itemController='todo'
+      li class={isCompleted:completed isEditing:editing}
+        if isEditing
+          = input class='edit' type='text' value=title focus-out='acceptChanges' insert-newline='acceptChanges'
+        else
+          = input class='toggle' type='checkbox' checked=isCompleted
+          label{action 'editTodo' on='doubleClick'}= title
+          button.destroy{action 'removeTodo'}
   input#toggle-all type='checkbox'
 
 footer#footer
