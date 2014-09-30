@@ -6,12 +6,12 @@ section#main
 
 footer#footer
   span#todo-count
-    strong 
-      ` 2
-    | todos left
+    strong= remaining
+    ` {{inflection}} left
   ul#filters
     li= link-to 'todos.index' activeClass='selected' | All
     li= link-to 'todos.active' activeClass='selected' | Active
     li= link-to 'todos.complete' activeClass='selected' | Complete
-  button#clear-completed Clear completed (1)
+  if hasCompleted
+    button#clear-completed{action 'clearCompleted' } Clear completed {{completed}}
     
